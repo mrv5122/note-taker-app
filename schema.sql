@@ -1,0 +1,10 @@
+CREATE DATABSE notes_db;
+USE notes_db;
+
+CREATE TABLE notes
+(
+ id INT NOT NULL AUTO_INCREMENT,
+ note_title VARCHAR(80) NOT NULL,
+ note VARCHAR(800) NOT NULL,
+ PRIMARY KEY (id)
+);
