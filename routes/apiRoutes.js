@@ -5,7 +5,13 @@ var connection = require('../db/connection');
 
 // GET responds with all notes from the database
 // https://expressjs.com/en/4x/api.html#app.get.method
-router.get('/path/name/here', function(req, res) {
+router.get('/', function(req, res) {
+  connection.query("SELECT * FROM notes;", function(err, data) {
+    if (err) {
+      return res.status(500).end();
+    }
+    res.send(req.body);
+  });
   // TODO: Create connection query to retrieve all notes from MySQL database
   // https://www.npmjs.com/package/mysql#performing-queries
 });

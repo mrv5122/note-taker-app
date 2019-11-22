@@ -9,7 +9,7 @@ if (process.env.JAWSDB_URL) {
     host: "localhost",
     port: 3306,
     user: "root", // FIXME: Establish a connection to your MySQL Database
-    password: "", // https://www.npmjs.com/package/mysql#establishing-connections
+    password: "Omicronf15", // https://www.npmjs.com/package/mysql#establishing-connections
     database: "note_db"
   });
 }
@@ -21,5 +21,12 @@ connection.config.typeCast = function(field, next) {
   return next();
 };
 
+connection.connect(function(err) {
+  if (err) {
+    console.error("error connection: " + err.stack);
+    return;
+  }
+  console.log("connected as id: " + connection.threadID);
+});
 
 module.exports = connection;

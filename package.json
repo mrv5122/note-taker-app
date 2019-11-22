@@ -1,15 +1,20 @@
 {
-  "name": "note-taker",
+  "name": "note-taker-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "note taker app for Rutgers Coding Bootcamp",
+  "main": "connections.js",
   "scripts": {
+    "test": "",
     "start": "node server.js"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrv5122/note-taker-app.git"
+  },
+  "author": "Manuel R Vazquez",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.4",
-    "mysql": "^2.16.0"
-  }
+  "bugs": {
+    "url": "https://github.com/mrv5122/note-taker-app/issues"
+  },
+  "homepage": "https://github.com/mrv5122/note-taker-app#readme"
 }
