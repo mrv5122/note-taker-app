@@ -1,6 +1,6 @@
 // dependencies
-var express = require('express');
-var connection = require("./database/connection.js");
+var express = require("express");
+var connection = require("./db/connection.js");
 
 // Initialize the app and create a port
 var app = express();
@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-// import route files from 'route/'
+// import route files from 'routes/'
 require("./routes/apiRoutes")(app, connection);
 require("./routes/htmlRoutes")(app);
 

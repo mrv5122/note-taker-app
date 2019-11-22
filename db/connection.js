@@ -7,7 +7,7 @@ if (process.env.JAWSDB_URL) {
 } else {
   connection = mysql.createConnection({
     host: "localhost",
-    port: 3306,
+    port: 4000,
     user: "root", // FIXME: Establish a connection to your MySQL Database
     password: "Omicronf15", // https://www.npmjs.com/package/mysql#establishing-connections
     database: "note_db"
@@ -25,8 +25,9 @@ connection.connect(function(err) {
   if (err) {
     console.error("error connection: " + err.stack);
     return;
-  }
+  } else {
   console.log("connected as id: " + connection.threadID);
+  };
 });
 
 module.exports = connection;

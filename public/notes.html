@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Note Taker</title>
+</head>
+<body>
+<span id="navtop"> Note Taker Application</span>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 note-col">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Edit Note</h3>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="noteTitle" placeholder="Title">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="noteBody" placeholder="insert note here...">
+                    </div>
+                </div>
+                <button class="btn btn-primary-btn" id="updateNote">Update Note</button>
+                <button class="btn btn-primary-btn" id="saveNote">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- connect index.js script to incorporate jquery functionality-->
+    <script src="./assets/js/index.js"></script>
+</body>
+</html>

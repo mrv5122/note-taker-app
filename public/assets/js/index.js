@@ -1,6 +1,3 @@
-// get the note data from the inputs, save it to the db and update the view
-$(function() {
-    
     // delete note
     $(".delnote").on("click", function(event) {
         var id = $(this).data("id");
@@ -65,4 +62,3 @@ $(function() {
         );
     });
 
-});

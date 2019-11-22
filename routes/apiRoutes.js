@@ -1,33 +1,54 @@
 var router = require('express').Router();
-var connection = require('../db/connection');
 
-// https://expressjs.com/en/guide/routing.html
-
-// GET responds with all notes from the database
-// https://expressjs.com/en/4x/api.html#app.get.method
-router.get('/', function(req, res) {
-  connection.query("SELECT * FROM notes;", function(err, data) {
+module.exports = (connection) => {
+// retreive all notes
+router.get('/api/notes', function(req, res) {
+  connection.query('SELECT * FROM notes;', function(err, result) {
     if (err) {
-      return res.status(500).end();
+      console.log(err);
+    } else {
+      // return to user as JSON
+      res.json(result);
+      console.log(result);
     }
-    res.send(req.body);
   });
-  // TODO: Create connection query to retrieve all notes from MySQL database
-  // https://www.npmjs.com/package/mysql#performing-queries
 });
 
 // POST uses data passed on req.body to create a new note in the database
-// https://expressjs.com/en/4x/api.html#app.post.method
-router.post('/path/name/here', function(req, res) {
+router.post('/api/notes', function(req, res) {
   // TODO: Create connection query to insert a new note into MySQL database
-  // https://www.npmjs.com/package/mysql#performing-queries
+  connection.query('INSERT INTO notes SET title= "' + req.body.title + '", body= "' + req.body.body + '";', function(err) {
+    if (err) {
+      throw err
+    } else {
+      console.log("Note added to database");
+    }
+    
+  });
 });
 
-// DELETE deletes the note with an id equal to req.params.id
-// https://expressjs.com/en/4x/api.html#app.delete.method
-router.delete('/path/name/here', function(req, res) {
-  // TODO: Create connection query to delete a note from MySQL database by the provided `id` parameter
-  // https://www.npmjs.com/package/mysql#performing-queries
+// DELETE note from database
+router.delete('/api/notes/:id', function(req, res) {
+  connection.query("DELETE FROM notes WHERE id = ?", [req.params.id], function(err, result) {
+    if (err) {
+      throw err
+    } else {
+    res.json(result);
+    console.log("note deleted ", req.params.id);
+    }
+  });
 });
 
-module.exports = router;
+// PUT to update notes
+router.put("/api/notes/:id", function(req, res){
+  connection.query("UPDATE notes SET title = ?, text = ? WHERE id = ?", [req.body.noteTitle, req.body.noteText,req.params.id], function(err) {
+    if (err) {
+       throw err
+    } else {
+      console.log("Note updated", req.params.id);
+      console.log(res);
+    }
+  });
+});
+
+};
