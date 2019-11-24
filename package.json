@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/mrv5122/note-taker-app/issues"
   },
-  "homepage": "https://github.com/mrv5122/note-taker-app#readme"
+  "homepage": "https://github.com/mrv5122/note-taker-app#readme",
+  "dependencies": {
+    "bootstrap": "^3.4.1"
+  }
 }

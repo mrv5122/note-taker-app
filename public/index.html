@@ -1,23 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Note Taker</title>
-    
+
+    <!-- css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
 </head>
+
 <body>
-    <ul class="notes">
-        <li>
-            <p id="noteId"><span class="label">ID: </span></p>
-            <p id="title"><span class="label">Title: </span></p>
-            <p id="notebod"><span class="label">Note: </span></p>
-            <button class="delnote">DELETE</button>
-        </li>
-    </ul>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Note Taker App</h1>
+        </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="notes">
+                        <li>
+                            <p id="noteId"><span class="label"> </span></p>
+                            <p id="title"><span class="label"> </span></p>
+                            <p id="notebod"><span class="label"> </span></p>
+
+                        </li>
+                        <button class="delnote btn">DELETE</button>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <script src="./assets/js/index.js"></script>
 </body>
+
 </html>
