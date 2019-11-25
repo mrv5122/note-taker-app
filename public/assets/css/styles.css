@@ -1,1 +1,9 @@
-/* MAKE IT LOOK PRETTY */
+#indexRow {
+    margin-top: 10%;
+}
+
+.card {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+

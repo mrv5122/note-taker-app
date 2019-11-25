@@ -1,7 +1,5 @@
-
-
-        // delete note
-    $("button").on("click", function(event) {
+// delete a note
+$("button").on("click", function(event) {
         var id = $(this).data("id");
 
         // send delete request
@@ -10,6 +8,7 @@
         }).then(
             function() {
                 console.log("deleted ID: ", id);
+                console.log(this);
                 // reload page to get updated list
                 location.reload();
             }
@@ -17,13 +16,13 @@
     });
 
 
-    // create note
-    $(".create-form").on("submit", function(event) {
+    // create note and save to db
+    $("#saveNewNote").on("submit", function(event) {
         event.preventDefault();
 
         var newNote = {
-            title: $("#title").val().trim(),
-            body: $("#notebod").val().trim()
+            title: $("#newNoteTitle").val().trim(),
+            body: $("#newNoteBody").val().trim()
         };
 
         // send POST request
@@ -32,7 +31,7 @@
             data: newNote
         }).then(
             function() {
-                console.log("created new note");
+                console.log("created new note", newNote);
                 // reload page for updated list
                 location.reload();
             }
@@ -62,5 +61,4 @@
                 location.assign("/");
             }
         );
-    });
     });

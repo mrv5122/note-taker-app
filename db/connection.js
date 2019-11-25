@@ -23,7 +23,7 @@ connection.config.typeCast = function(field, next) {
 
 connection.connect(function(err) {
   if (err) {
-    console.error("error connection: " + err.stack);
+    console.error("error connecting: " + err.stack);
     return;
   } else {
   console.log("connected as id: " + connection.threadID);

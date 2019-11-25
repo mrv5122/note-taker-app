@@ -4,32 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./assets/css/styles.css">
     <title>Note Taker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
-<span id="navtop"> Note Taker Application</span>
-<div class="container">
+<div class=" row jumbotron flex text-center">
+    <h1>NoteTaker</h1>
+    
+</div>
+
+<br>
     <div class="row">
-        <div class="col-md-6 note-col">
+        <div class="col-md-6" id="new-note-col">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="card-title">Edit Note</h3>
+                    <h3 class="card-title">New Note</h3>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="noteTitle" placeholder="Title">
+                        <input type="text" class="form-control" id="newNoteTitle" placeholder="Title">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" id="noteBody" placeholder="insert note here...">
+                        <input class="form-control" id="newNoteBody" placeholder="insert note here...">
                     </div>
                 </div>
-                <button class="btn btn-primary-btn" id="updateNote">Update Note</button>
-                <button class="btn btn-primary-btn" id="saveNote">Save</button>
+                <button class="btn btn-primary-btn" id="saveNewNote">Save</button>
             </div>
         </div>
+        <div class="col-md-6 text-center" id="all-notes-col">
+                <div class="note-head">
+                        <h3>All Notes</h3>
+                    </div>
+            <ul>
+                   <li>
+                       <div class="card">
+                           <div class="card-body">
+                               <h3 class="card-title" id="savedNoteTitle"></h3>
+                               <div class="noteBody">
+                                   <p id="savedNoteBody"></p>
+                               </div>
+                           </div>
+                       </div>
+                       
+                   </li>
+
+
+            </ul>
+        </div> 
     </div>
-</div>
+
+
+  <!-- connect index.js script to incorporate jquery functionality-->
+  <script src="./assets/js/index.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- connect index.js script to incorporate jquery functionality-->
-    <script src="./assets/js/index.js"></script>
+  
 </body>
 </html>

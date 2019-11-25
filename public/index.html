@@ -12,34 +12,30 @@
     <!-- css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
         integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <link rel="stylesheet" href="./assets/css/styles.css">
 
 </head>
 
 <body>
-    <div class="row">
-        <div class="col-md-12">
-            <h1>Note Taker App</h1>
-        </div>
-            <br>
-            <div class="row">
-                <div class="col-md-12">
-                    <ul class="notes">
-                        <li>
-                            <p id="noteId"><span class="label"> </span></p>
-                            <p id="title"><span class="label"> </span></p>
-                            <p id="notebod"><span class="label"> </span></p>
+    <div class="row jumbotron flex" id="indexRow">
+       
+        <div class="col-md-12 text-center">
+          
+            <h1>NoteTaker App</h1>
 
-                        </li>
-                        <button class="delnote btn">DELETE</button>
-                    </ul>
-                    
-                </div>
-            </div>
+            <ul class="list-group">
+                    <li><p>Welcome to NoteTaker. To view, edit, or save a note, press continue.</p></li>
+                    <li><a class="btn" href="/notes" id="toNotes">CONTINUE</a></li>
+                </ul>
+
         </div>
+            
+                 
+
+                    
     </div>
 
-
-    <script src="./assets/js/index.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
 
 </html>

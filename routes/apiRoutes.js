@@ -1,8 +1,7 @@
-var router = require('express').Router();
 
-module.exports = (connection) => {
+module.exports = (app, connection) => {
 // retreive all notes
-router.get('/api/notes', function(req, res) {
+app.get('/api/notes', (req, res) => {
   connection.query('SELECT * FROM notes;', function(err, result) {
     if (err) {
       console.log(err);
@@ -15,7 +14,7 @@ router.get('/api/notes', function(req, res) {
 });
 
 // POST uses data passed on req.body to create a new note in the database
-router.post('/api/notes', function(req, res) {
+app.post('/api/notes', function(req, res) {
   // TODO: Create connection query to insert a new note into MySQL database
   connection.query('INSERT INTO notes SET title= "' + req.body.title + '", body= "' + req.body.body + '";', function(err) {
     if (err) {
@@ -28,7 +27,7 @@ router.post('/api/notes', function(req, res) {
 });
 
 // DELETE note from database
-router.delete('/api/notes/:id', function(req, res) {
+app.delete('/api/notes/:id', function(req, res) {
   connection.query("DELETE FROM notes WHERE id = ?", [req.params.id], function(err, result) {
     if (err) {
       throw err
@@ -40,7 +39,7 @@ router.delete('/api/notes/:id', function(req, res) {
 });
 
 // PUT to update notes
-router.put("/api/notes/:id", function(req, res){
+app.put("/api/notes/:id", function(req, res){
   connection.query("UPDATE notes SET title = ?, text = ? WHERE id = ?", [req.body.noteTitle, req.body.noteText,req.params.id], function(err) {
     if (err) {
        throw err
